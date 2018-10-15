@@ -12,13 +12,13 @@
     <h1>Quiz</h1>
 
     <div class="container">
-        <div class="question-card">
-            <form action="" name=quesetion1>
+        <div class="quiz-card">
+            <form action="" name=question1>
                 <fieldset>
                     <legend>Question 1</legend>
                     <div>
                         <input type="radio" id="a" name="option" value="a">
-                        <label for="a">A</label>
+                        <label for="a">A</label> 
                     </div>
                     <div>
                         <input type="radio" id="b" name="option" value="b">
@@ -33,28 +33,14 @@
                         <label for="d">D</label>
                     </div>
                     <div>
-                        <label for="questions">Go to:</label>
-                        <select id="questions" name="questionList">
-                            <option value="question1">Question 1</option>
-                            <option value="question2">Question 2</option>
-                            <option value="question3">Question 3</option>
-                            <option value="question4">Question 4</option>
-                            <option value="question5">Question 5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="backBtn">Back</button>
-                        <button class="resetBtn">Reset</button>
-                        <button class="saveBtn">Save answer</button>
-                        <button class="skipBtn">Skip</button>
-                        <button class="submitBtn" name="submit">Submit</button>
+                        <button class="submitBtn" id="submit1">Submit</button>
                     </div>
                 </fieldset>
             </form>
         </div>
         
-        <div class="question-card">
-            <form action="" name=quesetion2>
+        <div class="quiz-card">
+            <form action="" name=question2>
                 <fieldset>
                     <legend>Question 2</legend>
                     <div>
@@ -66,69 +52,42 @@
                         <label for="false">False</label>
                     </div>
                     <div>
-                        <label for="questions">Go to:</label>
-                        <select id="questions" name="questionList">
-                            <option value="question1">Question 1</option>
-                            <option value="question2">Question 2</option>
-                            <option value="question3">Question 3</option>
-                            <option value="question4">Question 4</option>
-                            <option value="question5">Question 5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="backBtn">Back</button>
-                        <button class="resetBtn">Reset</button>
-                        <button class="saveBtn">Save answer</button>
-                        <button class="skipBtn">Skip</button>
-                        <button class="submitBtn" name="submit">Submit</button>
+                        <button class="submitBtn" id="submit2">Submit</button>
                     </div>
                 </fieldset>
             </form>
         </div>
         
-        <div class="question-card">
-            <form action="" name=quesetion3>
+        <div class="quiz-card">
+            <form action="" name=question3>
                 <fieldset>
                     <legend>Question 3</legend>
                     <div>
-                        <input type="radio" id="a3" name="option" value="a3">
-                        <label for="a3">A3</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="b3" name="option" value="b3">
-                        <label for="b3">B3</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="c3" name="option" value="c3">
-                        <label for="c3">C3</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="d3" name="option" value="d3">
-                        <label for="d3">D3</label>
-                    </div>
-                    <div>
-                        <label for="questions">Go to:</label>
-                        <select id="questions" name="questionList">
-                            <option value="question1">Question 1</option>
-                            <option value="question2">Question 2</option>
-                            <option value="question3">Question 3</option>
-                            <option value="question4">Question 4</option>
-                            <option value="question5">Question 5</option>
+                        <label for="part1">part1</label>
+                        <select id="part1" name="part1">
+                            <option value="choicePart1">Choose</option>
+                            <option value="answer1Part1">answer1</option>
+                            <option value="answer2Part1">answer2</option>
+                            <option value="answer3Part1">answer3</option>
+                        </select>
+
+                        <label for="part2">part2</label>
+                        <select id="part2" name="part2">
+                            <option value="choicePart2">Choose</option>
+                            <option value="answer1Part2">answer1</option>
+                            <option value="answer2Part2">answer2</option>
+                            <option value="answer3Part2">answer3</option>
                         </select>
                     </div>
                     <div>
-                        <button class="backBtn">Back</button>
-                        <button class="resetBtn">Reset</button>
-                        <button class="saveBtn">Save answer</button>
-                        <button class="skipBtn">Skip</button>
-                        <button class="submitBtn" name="submit">Submit</button>
+                        <button class="submitBtn" id="submit3">Submit</button>
                     </div>
                 </fieldset>
             </form>
         </div>
 
-        <div class="question-card">
-            <form action="" name=quesetion4>
+        <div class="quiz-card">
+            <form action="" name=question4>
                 <fieldset>
                     <legend>Question 4</legend>
                     <div>
@@ -164,55 +123,35 @@
                         <label for="8">8</label>
                     </div>
                     <div>
-                        <label for="questions">Go to:</label>
-                        <select id="questions" name="questionList">
-                            <option value="question1">Question 1</option>
-                            <option value="question2">Question 2</option>
-                            <option value="question3">Question 3</option>
-                            <option value="question4">Question 4</option>
-                            <option value="question5">Question 5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="backBtn">Back</button>
-                        <button class="resetBtn">Reset</button>
-                        <button class="saveBtn">Save answer</button>
-                        <button class="skipBtn">Skip</button>
-                        <button class="submitBtn" name="submit">Submit</button>
+                        <button class="submitBtn" id="submit4">Submit</button>
                     </div>
                 </fieldset>
             </form>
         </div>
 
-        <div class="question-card">
-            <form action="" name=quesetion5>
+        <div class="quiz-card">
+            <form action="" name=question5>
                 <fieldset>
                     <legend>Question 5</legend>
                     <div>
-                        <input type="text" id="answer" name="txtAnswer" required>
-                    </div>
-                <div>
-                        <label for="questions">Go to:</label>
-                        <select id="questions" name="questionList">
-                            <option value="question1">Question 1</option>
-                            <option value="question2">Question 2</option>
-                            <option value="question3">Question 3</option>
-                            <option value="question4">Question 4</option>
-                            <option value="question5">Question 5</option>
-                        </select>
+                        <input type="text" id="txtAnswer" name="txtAnswer" required>
                     </div>
                     <div>
-                        <button class="backBtn">Back</button>
-                        <button class="resetBtn">Reset</button>
-                        <button class="saveBtn">Save answer</button>
-                        <button class="skipBtn">Skip</button>
-                        <button class="submitBtn" name="submit">Submit</button>
+                        <button class="submitBtn" id="submit5">Submit</button>
                     </div>
                 </fieldset>
             </form>
         </div>
+
+        <div class="quiz-card">
+            <h2>Your-Score:</h2>
+            <div class="score">
+                <p class="grade"></p>
+                <a href="./day5.html">Restart Quiz</a>
+            </div>
+        </div>
     </div>
 
-    <script src="./mycode-d5.js"></script>
+    <script src="./exercise-d5.js"></script>
 </body>
 </html>
