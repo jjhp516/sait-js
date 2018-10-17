@@ -28,6 +28,7 @@ var submitBtn = $('#submitBtn');
 $('#num-picker').attr('class','errorField');submitBtn.on('click', function(event) {
     $('#errorNum').css('color','white');
     $('#num-picker').removeClass('errorField');
+
     $('#errorHue').css('color','white');
     $('#hue-picker').removeClass('errorField');
 
@@ -36,7 +37,11 @@ $('#num-picker').attr('class','errorField');submitBtn.on('click', function(event
         event.preventDefault();
         $('#errorNum').css('color','red');
         $('#num-picker').attr('class','errorField');
-    } 
+    } else {
+        event.preventDefault();
+        count = numOfColors.prop('value');
+        console.log(count);
+    };
 
     var textinputs = document.querySelectorAll('input[type=checkbox]'); 
     var empty = [].filter.call( textinputs, function( el ) {
@@ -48,13 +53,15 @@ $('#num-picker').attr('class','errorField');submitBtn.on('click', function(event
         $('#errorHue').css('color','red');
         $('#hue-picker').attr('class','errorField');
     }
-
-
-    //     event.preventDefault();
-        
- 
-
     
+    
+    checkbox.each(function() {
+        var checked = $(this).prop('checked');
+        var hueArray = [];
+        if(checked == true) {
+            hueArray.push(checkbox.attr('value'));
+        }
+    });    
 });
 
 
