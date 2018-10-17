@@ -12,10 +12,10 @@ var checkAll = $('#checkAll');
 checkAll.on('click', function() {
     // if checkboxAll is checked, check everything
     if(checkAll.prop("checked")) {
-        checkbox.attr("checked",true);
+        checkbox.prop("checked",true);
     // if checkboxAll is unchecked, uncheck everything
     } else {
-        checkbox.attr("checked",false);
+        checkbox.prop("checked",false);
     }
 });
 
@@ -25,29 +25,42 @@ var numOfColors = $('#numOfColors');
 // get submit button
 var submitBtn = $('#submitBtn');
 
-// when submit button it clicked...
-submitBtn.on('click', function(event) {
+$('#num-picker').attr('class','errorField');submitBtn.on('click', function(event) {
     $('#errorNum').css('color','white');
-    $('.num-picker').removeClass('errorField');
-    // prevent its default action   
+    $('#num-picker').removeClass('errorField');
+    $('#errorHue').css('color','white');
+    $('#hue-picker').removeClass('errorField');
+
+    $('#num-picker').attr('class','errorField');    
     if(numOfColors.prop('value') < 1 || numOfColors.prop('value') > 12) {
         event.preventDefault();
         $('#errorNum').css('color','red');
-        $('.errorField').css('background','linear-gradient(to right, rgb(230,230,255,0.2),#262626)');
+        $('#num-picker').attr('class','errorField');
     } 
 
-    if(checkbox.prop("checked",false)) {
+    var textinputs = document.querySelectorAll('input[type=checkbox]'); 
+    var empty = [].filter.call( textinputs, function( el ) {
+    return !el.checked
+    });
+
+    if (textinputs.length == empty.length) {
         event.preventDefault();
         $('#errorHue').css('color','red');
-        $('.errorField').css('background','linear-gradient(to right, rgb(230,230,255,0.2),#262626)');
+        $('#hue-picker').attr('class','errorField');
     }
 
-    // $(".test:checked").length == 0
+
+    //     event.preventDefault();
+        
+ 
+
+    
 });
 
 
-var tester = document.paletteForm.hue.name;
-console.log(tester);
+
+
+
 
 
 
