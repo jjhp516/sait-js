@@ -83,7 +83,7 @@ fieldset {
     padding: 10px 0;
 }
 
-.num-picker {
+#num-picker {
     min-width: 300px;
     margin-bottom: 35px;
 }
@@ -129,6 +129,11 @@ fieldset {
 
 .mono {
     background-color: gray;
+}
+
+
+.errorField {
+    background: linear-gradient(to right, rgb(230,230,255,0.2),#262626);
 }
 
 .palette {
