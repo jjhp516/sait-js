@@ -28,21 +28,28 @@ var submitBtn = $('#submitBtn');
 // when submit button it clicked...
 submitBtn.on('click', function(event) {
     $('#errorNum').css('color','white');
-    $('.errorField').css('background','');
+    $('.num-picker').removeClass('errorField');
     // prevent its default action   
     if(numOfColors.prop('value') < 1 || numOfColors.prop('value') > 12) {
         event.preventDefault();
         $('#errorNum').css('color','red');
         $('.errorField').css('background','linear-gradient(to right, rgb(230,230,255,0.2),#262626)');
-    } else {
-        // count = number that the user put in
-        count = numOfColors.prop('value');
-        console.log(count);
-    };
+    } 
 
-    if(checkbox.attr("checked",false)) {
+    if(checkbox.prop("checked",false)) {
         event.preventDefault();
         $('#errorHue').css('color','red');
         $('.errorField').css('background','linear-gradient(to right, rgb(230,230,255,0.2),#262626)');
     }
+
+    // $(".test:checked").length == 0
 });
+
+
+var tester = document.paletteForm.hue.name;
+console.log(tester);
+
+
+
+
+
