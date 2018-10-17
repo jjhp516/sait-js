@@ -68,23 +68,24 @@ submitQ3.addEventListener('click', function(event) {
 
 })
 
-submitQ4.addEventListener('click', function(event) {
-    event.preventDefault();
-    if(!document.question4.checklist.value) {
-        console.log("Pick at least one.");
-    } else if(document.question4.checklist.value[2] && document.question4.checklist.value[4] && document.question4.checklist.value[7]) {
-        console.log('Correct!');
-        score++;
-        console.log(score);
-        submitQ4.style.display = 'none';
-        nextBtn4.style.display = 'block';
-    } else {
-        console.log('Correct answer: 2, 3, 7');
-        submitQ4.style.display = 'none';
-        nextBtn4.style.display = 'block';
-    }
+// mistakes were made...
+// submitQ4.addEventListener('click', function(event) {
+//     event.preventDefault();
+//     if(!document.question4.checklist.value) {
+//         console.log("Pick at least one.");
+//     } else if(document.question4.checklist.value[2] && document.question4.checklist.value[4] && document.question4.checklist.value[7]) {
+//         console.log('Correct!');
+//         score++;
+//         console.log(score);
+//         submitQ4.style.display = 'none';
+//         nextBtn4.style.display = 'block';
+//     } else {
+//         console.log('Correct answer: 2, 3, 7');
+//         submitQ4.style.display = 'none';
+//         nextBtn4.style.display = 'block';
+//     }
 
-}) 
+// }) 
 
 submitQ5.addEventListener('click', function(event) {
     event.preventDefault();

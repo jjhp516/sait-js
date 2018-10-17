@@ -5,101 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Palette</title>
-    <!-- normalize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-    <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="./exercises-day6.css">
 </head>
 <body>
-    <div class="wrapper">
-        <a href="../index.html">back</a>
-        <div class="wrapper">
-            <h1>Color Palette Generator</h1>
-            <form action="">
-                <fieldset>
-                    <label for="numOfColors">Number of colors:</label>    
-                    <input type="number" name="numOfColors" id="numOfColors" min="1" max="54">
-                </fieldset>
-                
-                
-                <fieldset>
-                    <legend>Hue:</legend>
-                    <div>
-                        <div class="random"></div>
+    <a href="../index.html">back</a>
+    <div class="container">
+        <h1>Color Palette Generator</h1>
+        <form action="" name="paletteForm">
+            <div id="num-picker" class="errorField">
+                <label for="numOfColors">Number of colors:</label>    
+                <input type="number" name="numOfColors" id="numOfColors" value="1" min="1" max="12">
+                <p class="message errorNum" id="errorNum">select from 1 to 12</p>
+            </div>
+            
+            
+            <fieldset id="hue-picker" class="errorField">
+                <legend>Hue:
+                    <p class="message errorHue" id="errorHue">pick at least 1</p>
+                </legend>
+                <div class="grid3cols">
+                    <div class="gridcell col1 row1">
                         <input type="checkbox" id="checkAll" name="hue" value="checkAll">
+                        <div class="sample checkAll"></div>
                         <label for="checkAll">All</label>
                     </div>
-                    <div>
-                        <div class="sample red"></div>
+                    <div class="gridcell col2 row1">
                         <input type="checkbox" id="red" name="hue" value="red">
+                        <div class="sample red"></div>
                         <label for="red">Red</label>
                     </div>
-                    <div>
-                        <div class="sample orange"></div>
+                    <div class="gridcell col3 row1">
                         <input type="checkbox" id="yellow" name="hue" value="orange">
+                        <div class="sample orange"></div>
                         <label for="yellow">Orange</label>
                     </div>
-                    <div>
-                        <div class="sample yellow"></div>
+                    <div class="gridcell col1 row2">
                         <input type="checkbox" id="yellow" name="hue" value="yellow">
+                        <div class="sample yellow"></div>
                         <label for="yellow">Yellow</label>
                     </div>
-                    <div>
+                    <div class="gridcell col2 row2">
+                        <input type="checkbox" id="green" name="hue" value="green">
                         <div class="sample green"></div>
-                        <input type="checkbox" id="4" name="hue" value="green">
                         <label for="green">Green</label>
                     </div>
-                    <div>
-                        <div class="sample blue"></div>
+                    <div class="gridcell col3 row2">
                         <input type="checkbox" id="blue" name="hue" value="blue">
+                        <div class="sample blue"></div>
                         <label for="blue">Blue</label>
                     </div>
-                    <div>
-                        <div class="sample purple"></div>
+                    <div class="gridcell col1 row3">
                         <input type="checkbox" id="purple" name="hue" value="purple">
+                        <div class="sample purple"></div>
                         <label for="purple">Purple</label>
                     </div>
-                    <div>
-                        <div class="sample pink"></div>
+                    <div class="gridcell col2 row3">                       
                         <input type="checkbox" id="pink" name="hue" value="pink">
+                        <div class="sample pink"></div>
                         <label for="pink">Pink</label>
                     </div>
-                    <div>
-                        <div class="sample gray"></div>
+                    <div class="gridcell col3 row3">                        
                         <input type="checkbox" id="mono" name="hue" value="mono">
+                        <div class="sample mono"></div>
                         <label for="mono">Monochrome</label>
                     </div>
-                </fieldset>
-
-
-                <fieldset>
-                    <legend>Luminosity:</legend>
-                    <div class="selectLum">
-                        <div>
-                            <input type="radio" id="light" name="luminosity" value="light">
-                            <label for="light">Light</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="dark" name="luminosity" value="dark">
-                            <label for="dark">Dark</label>
-                        </div>
-                        <div>
-                            <div class="sample orange"></div>
-                            <input type="radio" id="random" name="luminosity" value="random">
-                            <label for="random">Random</label>
-                        </div>
-                    </div>
-                </fieldset>
-
                 </div>
+            </fieldset>
 
-                <input type="submit" value="Create Palette">
-            </form>
 
-            <div class="palette"></div>   
-            
-        </div>
+            <fieldset>
+                <legend>Luminosity:</legend>
+                <div class="grid3cols">
+                    <div class="col1">
+                        <input type="radio" id="random" name="luminosity" value="random" checked>
+                        <label for="random">Random</label>
+                    </div>
+                    <div class="col2">
+                        <input type="radio" id="dark" name="luminosity" value="dark">
+                        <label for="dark">Dark</label>
+                    </div>
+                    <div class="col3">
+                        <input type="radio" id="light" name="luminosity" value="brigh">
+                        <label for="light">Light</label>
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <input type="submit" id="submitBtn" value="Create Palette">
+        </form>
+
+        <div class="palette" id="palette"></div>   
+        
     </div>
 
     

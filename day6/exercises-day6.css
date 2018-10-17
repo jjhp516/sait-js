@@ -1,0 +1,146 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+body {
+    background: #262626;
+}
+
+h1, p, label, legend {
+    color: white;
+}
+
+legend, label {
+    font-weight: 700;
+}
+
+a {
+    background: white;
+    padding: 5px 10px;
+}
+
+.message {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.errorHue {
+    vertical-align: middle;
+}
+
+#numOfColors {
+    margin-left: 10px;
+}
+
+
+
+.grid3cols {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 20px;
+}
+
+.gridcell {
+    display: flex;
+    align-items: center;
+}
+
+.col1 {
+    grid-column: 1 / 2;
+}
+
+.col2 {
+    grid-column: 2 / 3;
+}
+
+.col3 {
+    grid-column: 3 / 4;
+}
+
+.row1 {
+    grid-row: 1;
+}
+
+.row2 {
+    grid-row: 2;
+}
+
+.row3 {
+    grid-row: 3;
+}
+
+
+
+form {
+    padding-top: 20px;
+}
+
+fieldset {
+    border: none;
+    margin: 30px 0;
+    padding: 10px 0;
+}
+
+.num-picker {
+    min-width: 300px;
+    margin-bottom: 35px;
+}
+
+.sample {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.checkAll {
+    background: linear-gradient(to right, red,orange,yellow,green,blue,purple,pink,gray);
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.mono {
+    background-color: gray;
+}
+
+.palette {
+    max-width: 600px;
+    min-height: 200px;
+    margin: 30px 0; 
+    display: flex;
+    /* border: 1px solid white; */
+}
+
+.colorBox {
+    height: 100px;
+    width: 100px;
+    margin: 2px 0;
+}
