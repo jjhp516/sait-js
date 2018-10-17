@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <script>
+
+        // SET DATA
+            // valid
+        localStorage.setItem("username", "Janessa"); //localStorage.setItem("key","value");  OR use dot notation:
+        localStorage.userName = "Alice"; //localStorage.key = "value"
+        console.log(localStorage);
+
+            // invalid
+        // localStorage.setItem("user name", "Alice");
+        // localStorage.user name = "Janessa"; 
+
+        // GET DATA
+        var name1 = localStorage.getItem("username"); // OR:
+        var name2 = localStorage.userName;
+        
+        console.log(name1);
+        console.log(name2);
+        
+
+        // REMOVE DATA
+        localStorage.removeItem("username");
+        localStorage.userName = null;
+        
+        // WIPE DATA - Remove all keys and values
+        localStorage.clear();
+        console.log(localStorage);
+    </script>
+</body>
+</html>
