@@ -8,6 +8,8 @@ var errorLyrics = document.getElementById('errorLyrics');
 
 
 submitButton.addEventListener('click',function(event) {
+    event.preventDefault();
+
     var artist = document.songSearch.artist.value;
     var title = document.songSearch.title.value;
 
@@ -17,16 +19,13 @@ submitButton.addEventListener('click',function(event) {
     $(errorHeader).css('display','none');
 
     if(!artist) {
-        event.preventDefault();
         $(errorArtist).css('display','inline');
     }
 
     if(!title) {
-        event.preventDefault();
         $(errorTitle).css('display','inline');
     } 
     
-    event.preventDefault();
     var hostUrl = 'https://api.lyrics.ovh/v1';
     var songUrl = hostUrl + '/' + artist + '/' + title;
     var songHeader = document.getElementById('songHeader');
@@ -52,31 +51,3 @@ submitButton.addEventListener('click',function(event) {
     fetchLyrics(songUrl);
 })
 
-// var hostUrl = 'https://api.lyrics.ovh/v1';
-// var songUrl = hostUrl + '/' + artist + '/' + title;
-
-
-// var songHeader = document.getElementById('songHeader');
-// songHeader.innerHTML = artist + " - " + title;
-// songHeader.style.textTransform = 'capitalize';
-
-// function fetchLyrics(url) {
-//     fetch(url)
-//     .then(function(response) {
-//         return response.json();
-//     }) 
-//     .then(function(data) {
-//         document.getElementById('lyrics').innerHTML = data.lyrics;
-//     })
-// }
-    
-// fetchLyrics(songUrl);
-
-// fetch('https://api.lyrics.ovh/v1/steelheart/shes-gone')
-// .then(function(response) {
-//     return response.json();
-// }) 
-// .then(function(data) {
-//     console.log(data.lyrics);
-//     document.getElementById('lyrics').innerHTML = data.lyrics;
-// })
