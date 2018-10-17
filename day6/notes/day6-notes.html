@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>d6-notes</title>
+    <style>
+        #square {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="myForm">
+        <div></div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name"/>
+            <p id="error">Please enter your name.</p>
+        <div></div>
+        <input type="button" id="submitBtn" value="Submit"/>
+    </form>
+
+    <div id="square"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="jquery-1.11.3.min.js"><\/script>')
+    </script>
+    <!-- math js library -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.2.0/math.js"></script> -->
+    <script>
+        // code here
+        var newBtn = $('<button>Click Me</button>');
+        $('body').append(newBtn);
+        
+        function clickCheck() {
+            console.log('clicked');
+        };
+
+        newBtn.on('click', clickCheck);
+        
+
+        var button2 = $('<button></button>');
+        button2.attr('class','pointlessBtn').html('Pointless Button');
+        $('body').append(button2);
+        button2.on('click', function() {
+            console.log("What's the point?")
+        });
+
+
+        // keyup(): Event fired when a key is released on the keyboard.
+        // keydown(): Event fired when a key is pressed on the keyboard.
+        // keypress:() Event fired when a key is pressed on the keyboard (case sensitive / does not capture special keys(e.g. alt ctrl shift))
+        $('body').on('keypress', function(event) {
+            console.log(event);
+            console.log(event.which);
+            console.log(event.target);
+        });
+        
+        var name = document.myForm.name.value;
+
+        $('#error').hide();
+
+        $('#submitBtn').on('click', function(event) {
+            if(!name) {
+                event.preventDefault();
+                $('#error').fadeIn(1000);
+                $('#error').show(5000, function() {
+                $(this).css('color','red');
+                })
+            }
+        });
+
+        $('#square').animate({
+            opacity: 0.5,
+            height: "hide",
+            }, 2000, function() {
+                //animation complete.
+            });
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX Example</title>
+</head>
+<body>
+    <script>
+        // getting information from API
+        // fetch('url') fetch data from a site -> returns a promise
+        fetch('https://jsonplaceholder.typicode.com/users')
+        // once data is fetched, console log the response
+        .then(function(response) {
+            console.log(response);
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+            // iterate through data
+            for(var i=0; i<data.length; i++) {
+                // console.log name and email from each data
+                console.log(data[i].name + ": " + data[i].email);
+            }
+        })
+
+        // Using Fetch API to Send Data
+        // 1. Create the content that you want to sen
+        var user = {
+            username: "htovey",
+            id: 780
+        }
+
+        var user2 = {
+            name: "Jason",
+            username: "json",
+            id: 34507
+        }
+
+        
+        // 2. fetch('URL', {method, headers, body})
+        fetch('https://jsonplaceholder.typicode.com/users', {
+            // Set your method
+            method: 'POST',
+
+            // Set your headers
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // Set your body: stringify and pass the object (user) that you created            
+            body: JSON.stringify(user)
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+
+        // create a function for sending data using Fetch API
+        function sendData(url, content) {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(content)
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                // console.log(data);
+            })
+        }
+
+        sendData('https://jsonplaceholder.typicode.com/users', user2);
+        
+        // handling errors with Fetch API
+        fetch('https://jsonplaceholder.typicode.com/404')
+        .then(function(response) {
+            if(!response.ok) {
+                throw Error(response.statusText);
+            }
+
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+        .catch(function(error) {
+            console.log("The error: " + error);
+        })
+
+
+    </script>
+</body>
+</html>
