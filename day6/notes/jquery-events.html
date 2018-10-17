@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+   <title>Exercise 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1 class="page-header">Let's Play with Events!</h1>
+      </div>
+    </div>
+ 
+    <div class="row">
+      <div class="span3">
+        <button>Random Button</button>
+        <hr />
+        <form name="myForm">
+          <fieldset>
+            <div>
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" />
+            </div>
+            <p id="errorFirst">Please enter your first name</p>
+          </fieldset>
+          <fieldset>
+            <div>
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" />
+            </div>
+            <p id="errorLast">Please enter last name</p>
+          </fieldset>
+          <input type="submit" value="Submit">
+        </form>
+       </div>
+     </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        // your code here
+        var randomBtn = $('button');
+
+        randomBtn.on('click', function() {
+          console.log('clicked!');
+          $('body').css('background',randomColor);
+        })
+
+
+        var errorMessage1 = $('#errorFirst');
+        var errorMessage2 = $('#errorLast');
+        errorMessage1.hide();
+        errorMessage2.hide();
+        
+        // adding new id attribute to input element and accessing the same input by the new id
+        // !!!do not do this under normal circumstances!!! just add an id to the input tag in the html doc
+        var submit = $('input')[2];
+        // contents of submit are plain DOM elements, wrap in $() to turn it in to jQuery object
+        $(submit).attr('id','submit');
+        var submitBtn = $('#submit');
+
+        submitBtn.on('click', function(event) {
+          errorMessage1.hide();
+          errorMessage2.hide();
+          var firstName = document.myForm["first-name"].value;
+          var lastName = document.myForm["last-name"].value;
+
+          if(!firstName) {
+            event.preventDefault();
+            errorMessage1.fadeIn(1000, function() {
+              $(this).css('color','red');
+            });
+          }
+                  
+          if(!lastName) {
+            event.preventDefault();
+            errorMessage2.fadeIn(1000, function() {
+              $(this).css('color','red');
+            })
+          }
+          
+        })
+
+
+      });
+    </script>
+  </body>
+</html>

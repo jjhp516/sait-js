@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>d5-notes</title>
+</head>
+<body>
+    <form action="" method="" name="myForm" id="myForm">
+        <label for="first name">
+            First name:
+            <input 
+                type="text" 
+                id="firstname" 
+                name="first name" 
+                placeholder="first"/>
+        </label>
+
+        <label for="last name">
+            Last name:
+            <input 
+                type="text" 
+                id="last-name" 
+                name="last name" 
+                placeholder="last"/>
+        </label>
+
+        <label for="email">
+            E-mail:
+            <input 
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"/>        
+        </label>
+        
+        <label for="message">
+            Message:
+            <textarea name="message" id="message" placeholder="Type your message here"></textarea>
+        </label>
+    
+        <fieldset>
+            <Legend>Check any and all of how you currently feel:</legend>
+            <label for="sleepy">
+                sleepy
+                <input type="checkbox" name="feeling" id="sleepy" value="sleepy">
+            </label>
+            <label for="hungry">
+                hungry
+                <input type="checkbox" name="feeling" id="hungry" value="hungry">
+            </label>
+            <label for="thirsty">
+                thirsty
+                <input type="checkbox" name="feeling" id="thirsty" value="thirsty">
+            </label>
+        </fieldset>
+
+        <button name="submit" type="submit">Submit</button>
+    </form>
+
+    <form action="" name="validForm">
+        <label for="yourName"> Name:
+            <input type="text" id="yourName" name ="name" required>
+        </label>
+        <label for="pick"> Water or Milk?
+            <input type="text" id="pick" name="waterOrMilk" pattern="water|milk" required>
+        </label>
+        <label for="question"> Beer, Cider, or Cocktail?
+            <input type="text" id="question" name="alcohol" required minlength="4" maxlength="8">
+        </label>
+        <label for="num"> Pick a number between 1 and 10
+            <input type="number" id="num" name="number" value="1" required min="1" max="10">
+        </label>
+        <label for="email">
+            <input type="email" id="email" name="email" placeholder="email@sait.ca" pattern=".+@sait.ca" size="30" required title="must be a sait.ca email account">
+        </label>
+        <button name="submit">Submit</button>
+    </form>
+
+    <script src="./mycode-d5.js"></script>
+</body>
+</html>
