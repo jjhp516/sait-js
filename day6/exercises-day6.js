@@ -61,10 +61,7 @@ $('#num-picker').attr('class','errorField');submitBtn.on('click', function(event
         if(checked == true) {
             hueArray.push(checkbox.attr('value'));
         }
-    });
- 
-
-    
+    });    
 });
 
 
