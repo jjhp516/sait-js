@@ -52,11 +52,15 @@ $('#num-picker').attr('class','errorField');submitBtn.on('click', function(event
         event.preventDefault();
         $('#errorHue').css('color','red');
         $('#hue-picker').attr('class','errorField');
-    };
+    }
+    
     
     checkbox.each(function() {
-
-        if $(this).prop('checked',true)
+        var checked = $(this).prop('checked');
+        var hueArray = [];
+        if(checked == true) {
+            hueArray.push(checkbox.attr('value'));
+        }
     });
  
 
