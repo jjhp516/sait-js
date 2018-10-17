@@ -1,0 +1,14 @@
+.error {
+    display: none;
+    color: red;
+    margin-left: 16px;
+}
+
+.songHeader {
+    text-transform: capitalize;
+    display: inline;
+}
+
+.songLyrics {
+    white-space: pre-wrap;
+}

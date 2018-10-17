@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lyrics Finder</title>
+    <link rel="stylesheet" href="./exercise-d7.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Search Song Lyrics</h1>
+        <form action="" name="songSearch" class="form" id="form">
+            <div>
+                <label for="artist">Artist: </label>
+                <input type="text" id="artist" name="artist">
+                <p class="error" id="errorArtist">Enter name of artist.</p>
+            </div>
+            <div>
+                <label for="title">Song Title: </label>
+                <input type="text" id="title" name="title">
+                <p class="error" id="errorTitle">Enter song title.</p>
+            </div>
+            <input type="submit" class="submitButton" id="submitButton" value="Search">
+            <p class="error" id="errorNull">Try searching for another song.</p>
+        </form>
+        
+        <div class="lyricsContainer">
+            <h2 class="songHeader" id="songHeader"></h2>
+            <h3 class="error" id="errorHeader">Not found!</h3>
+            <p class="songLyrics" id="songLyrics"></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="jquery-1.11.3.min.js"><\/script>')
+    </script>
+
+    <script src="./exercise-d7.js"></script>
+</body>
+</html>
